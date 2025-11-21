@@ -2,35 +2,35 @@
 
 // 1 rock 2 paper 3 scissors
 
-function getComputerChoice(result) {
-  result = Math.floor(Math.random() * 3) + 1;
-  if (result === 1) {
-    result = "Rock!";
-  } else if (result === 2) {
-    result = "Paper!";
-  } else if (result === 3) {
-    result = "Scissors!";
+function getComputerChoice(choice) {
+  choice = Math.floor(Math.random() * 3) + 1;
+  if (choice === 1) {
+    choice = "rock";
+  } else if (choice === 2) {
+    choice = "paper";
+  } else if (choice === 3) {
+    choice = "scissors";
   } else {
     console.log("Error");
   }
-  console.log(result);
-  return result;
+  console.log(choice);
+  return choice;
 }
-function getHumanChoice(result) {
-  result = prompt("Type Rock, Paper or Scissors");
-  result = result.toLowerCase();
-  if (result === "rock") {
-    result = "Rock!";
-  } else if (result === "paper") {
-    result = "Paper!";
-  } else if (result === "scissors") {
-    result = "Scissors!";
+function getHumanChoice(choice) {
+  choice = prompt("Type Rock, Paper or Scissors");
+  choice = choice.toLowerCase();
+  if (choice === "rock") {
+    choice = "rock";
+  } else if (choice === "paper") {
+    choice = "paper";
+  } else if (choice === "scissors") {
+    choice = "scissors";
   } else {
     console.log("Error wrong input");
     return null;
   }
-  console.log(result);
-  return result;
+  console.log(choice);
+  return choice;
 }
 
 function gameRound(computerChoice, humanChoice) {
@@ -48,14 +48,20 @@ function gameRound(computerChoice, humanChoice) {
   } else if (computerChoice === "paper" && humanChoice === "rock") {
     console.log("Computer wins! Paper beats rock!");
     computerScore++;
-  } else if (computerChoise === "scissors" && humanChoice === "rock") {
+  } else if (computerChoice === "scissors" && humanChoice === "rock") {
     console.log("Human wins! Rocks beat scissors!");
     humanScore++;
-  } else if (computerChoise === "scissors " && humanChoice === "paper") {
+  } else if (computerChoice === "scissors" && humanChoice === "paper") {
     console.log("Human wins!, Scissors beats paper");
     computerScore++;
   }
+
+  return {
+    humanScore,
+    computerScore,
+  };
 }
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -63,4 +69,4 @@ const computerTurn = getComputerChoice();
 const humanTurn = getHumanChoice();
 
 gameRound(computerTurn, humanTurn);
-console.log(humanScore, computerScore);
+console.log("Computer", computerScore, "Human", humanScore);
