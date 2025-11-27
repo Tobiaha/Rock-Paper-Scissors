@@ -5,6 +5,7 @@
 const rockButton = document.getElementById("rock-button");
 const paperButton = document.getElementById("paper-button");
 const scissorsButton = document.getElementById("scissors-button");
+const result = document.getElementById("round-result");
 
 function playGame() {
   let humanScore = 0;
@@ -27,13 +28,13 @@ function playGame() {
   function getHumanChoice(choice) {
     choice = choice.toLowerCase();
     if (choice === "rock") {
-      console.log("rock chosen", choice);
+      console.log(choice);
       return choice;
     } else if (choice === "paper") {
-      console.log("paper chosen", choice);
+      console.log(choice);
       return choice;
     } else if (choice === "scissors") {
-      console.log("scissors chosen", choice);
+      console.log(choice);
       return choice;
     } else {
       console.log("Error wrong input");

@@ -25,6 +25,37 @@ h2 {
   justify-content: center;
 }
 
+.game-container {
+  height: 300px;
+  width: 100%;
+}
+
+.rock-container,
+.paper-container,
+.scissors-container {
+  width: 33.3%;
+  height: 100%;
+  text-align: center;
+
+  float: left;
+}
+
+.rock-container {
+  background-image: url("/IMG/rock.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.paper-container {
+  background-image: url("/IMG/paper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.scissors-container {
+  background-image: url("/IMG/scissors.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 button {
   margin: 5px;
   padding: 10px 20px;
