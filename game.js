@@ -2,6 +2,10 @@
 
 // 1 rock 2 paper 3 scissors
 
+const rockButton = document.getElementById("rock-button");
+const paperButton = document.getElementById("paper-button");
+const scissorsButton = document.getElementById("scissors-button");
+
 function playGame() {
   let humanScore = 0;
   let computerScore = 0;
@@ -21,19 +25,20 @@ function playGame() {
   }
 
   function getHumanChoice(choice) {
-    choice = prompt("Type Rock, Paper or Scissors");
     choice = choice.toLowerCase();
     if (choice === "rock") {
-      choice = "rock";
+      console.log("rock chosen", choice);
+      return choice;
     } else if (choice === "paper") {
-      choice = "paper";
+      console.log("paper chosen", choice);
+      return choice;
     } else if (choice === "scissors") {
-      choice = "scissors";
+      console.log("scissors chosen", choice);
+      return choice;
     } else {
       console.log("Error wrong input");
       return null;
     }
-    return choice;
   }
 
   function gameRound(computerChoice, humanChoice) {
@@ -65,7 +70,14 @@ function playGame() {
     };
   }
 
-  while (humanScore < 5 && computerScore < 5) {
+  rockButton.addEventListener("click", () => getHumanChoice("rock"));
+  paperButton.addEventListener("click", () => getHumanChoice("paper"));
+  scissorsButton.addEventListener("click", () => getHumanChoice("scissors"));
+}
+
+playGame();
+
+/* while (humanScore < 5 && computerScore < 5) {
     const computerTurn = getComputerChoice();
     const humanTurn = getHumanChoice();
 
@@ -82,5 +94,4 @@ function playGame() {
     console.log("Computer wins");
   }
 }
-
-playGame();
+*/
