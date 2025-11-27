@@ -26,7 +26,7 @@ h2 {
 }
 
 .game-container {
-  height: 300px;
+  height: 500px;
   width: 100%;
 }
 
@@ -56,8 +56,25 @@ h2 {
   background-size: cover;
 }
 
+.result-container {
+  height: 200px;
+  width: 100%;
+
+  background-color: burlywood;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 button {
   margin: 5px;
   padding: 10px 20px;
   font-size: 16px;
+}
+
+.resetButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
